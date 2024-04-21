@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./Shared",
+        "./NameNode"
+    ]
+}

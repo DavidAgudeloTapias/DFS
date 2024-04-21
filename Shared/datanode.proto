@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package datanode;
+
+// Servicio que ofrece DataNode
+service DataNodeService {
+  rpc StoreBlock(StoreBlockRequest) returns (StoreBlockResponse);
+  rpc RetrieveBlock(RetrieveBlockRequest) returns (RetrieveBlockResponse);
+}
+
+// Mensaje para solicitud de almacenamiento de bloque
+message StoreBlockRequest {
+  string block_id = 1;
+  bytes data = 2;
+}
+
+// Mensaje para respuesta de almacenamiento de bloque
+message StoreBlockResponse {
+  bool success = 1;
+}
+
+// Mensaje para solicitud de recuperación de bloque
+message RetrieveBlockRequest {
+  string block_id = 1;
+}
+
+// Mensaje para respuesta de recuperación de bloque
+message RetrieveBlockResponse {
+  bytes data = 1;
+}

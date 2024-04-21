@@ -1,0 +1,15 @@
+Ejecutar los datanodes
+python ./DataNodes/DataNode1/dataNode.py
+python ./DataNodes/DataNode2/dataNode.py
+python ./DataNodes/DataNode3/dataNode.py
+
+
+Ejecutar el namenode
+python ./NameNode/nameNode.py
+
+
+Para subir un archivo:
+python ./Client/client.py --upload ./Client/Linealizar.xlsx
+
+Para descargar el archivo:
+python ./Client/client.py --download Linealizar.xlsx --save ./
