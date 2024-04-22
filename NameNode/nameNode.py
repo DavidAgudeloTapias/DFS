@@ -20,7 +20,7 @@ class DataNodeClient:
 class NameNode:
     def __init__(self):
         self.files = {}
-        self.data_nodes = ["44.223.170.156:50050", "18.213.214.147:50051", "44.205.61.12:50052"]
+        self.data_nodes = ["172.31.88.105:50050", "172.31.84.218:50051", "172.31.94.91:50052"]
         self.block_size = 128 * 128  # Block size in bytes (128 KB)
 
     def add_file(self, file_name, file_path):
