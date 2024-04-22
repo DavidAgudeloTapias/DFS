@@ -10,7 +10,7 @@ sys.path.append(shared_dir)
 from nameNode import DataNodeClient
 
 # NameNode server address
-NAMENODE_URL = "http://localhost:5000"
+NAMENODE_URL = "http://34.224.24.65:5000"
 
 def upload_file(file_path):
     """
