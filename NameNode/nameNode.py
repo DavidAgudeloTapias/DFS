@@ -121,4 +121,4 @@ def download():
     return jsonify({"blocks_info": file_info})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='34.224.24.65', port=5000)
+    app.run(debug=True, host='172.31.86.179', port=5000)
