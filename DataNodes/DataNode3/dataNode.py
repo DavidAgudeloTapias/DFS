@@ -12,7 +12,7 @@ from datanode_pb2_grpc import DataNodeServiceServicer, add_DataNodeServiceServic
 
 class DataNodeService(DataNodeServiceServicer):
     def __init__(self, storage_path, other_data_nodes):
-        self.address = f'44.205.61.12:{data_node_port}'
+        self.address = f'172.31.94.91:{data_node_port}'
         self.blocks = {}
         self.storage_path = storage_path
         self.other_data_nodes = other_data_nodes
@@ -50,7 +50,7 @@ class DataNodeService(DataNodeServiceServicer):
 def serve(storage_path, port, other_data_nodes):
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     add_DataNodeServiceServicer_to_server(DataNodeService(storage_path, other_data_nodes), server)
-    server.add_insecure_port(f'44.205.61.12:{port}')
+    server.add_insecure_port(f'172.31.94.91:{port}')
     print(f'DataNode listening on port {port}')
     server.start()
     print('gRPC server started')
@@ -59,9 +59,10 @@ def serve(storage_path, port, other_data_nodes):
 if __name__ == '__main__':
     storage_directory = os.path.join(current_dir, 'storage')  # Relative path to the storage directory
     data_node_port = os.getenv('DATA_NODE_PORT', 50052)
-    other_nodes = ["44.223.170.156:50050", "18.213.214.147:50051"]  # List of other DataNodes to replicate to
+    other_nodes = ["172.31.88.105:50050", "172.31.84.218:50051"]  # List of other DataNodes to replicate to
 
     if not os.path.exists(storage_directory):
         os.makedirs(storage_directory)
 
     serve(storage_directory, data_node_port, other_nodes)
+    
