@@ -20,7 +20,7 @@ class DataNodeClient:
 class NameNode:
     def __init__(self):
         self.files = {}
-        self.data_nodes = ["localhost:50050", "localhost:50051", "localhost:50052"]
+        self.data_nodes = ["44.223.170.156:50050", "18.213.214.147:50051", "44.205.61.12:50052"]
         self.block_size = 128 * 128  # Block size in bytes (128 KB)
 
     def add_file(self, file_name, file_path):
@@ -121,4 +121,4 @@ def download():
     return jsonify({"blocks_info": file_info})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='localhost', port=5000)
+    app.run(debug=True, host='34.224.24.65', port=5000)
